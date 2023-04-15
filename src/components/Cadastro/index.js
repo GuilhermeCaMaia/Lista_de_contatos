@@ -56,10 +56,6 @@ export default function Cadastro() {
 
         await AsyncStorage.setItem('contatos', JSON.stringify(contatos));
 
-        // console.log({
-        //     id: new Data().getTime(), Nome, Telefone, Email,
-        //     Rua, Numero, Bairro, Cidade, Data_aniversario
-        // })
     }
 
     //Nome
