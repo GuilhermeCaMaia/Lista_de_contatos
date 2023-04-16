@@ -23,7 +23,7 @@ export default function Lista() {
     }, []);
 
     return (
-        <View>
+        <View style={styles.conteiner}>
             <StatusBar />
             <Text>Lista de Contatos</Text>
             <ScrollView>{contatos.map(contato => {
@@ -36,5 +36,10 @@ export default function Lista() {
 }
 
 const styles = StyleSheet.create({
+    conteiner: {
+        flex: 1,
+        backgroundColor: '#0E0D0D',
+        alignItems: 'baseline'
+    }
 
-})
+});

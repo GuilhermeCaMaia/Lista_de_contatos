@@ -4,17 +4,11 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { TouchableOpacity } from "react-native";
 import { ScrollView } from 'react-native';
+import AppContato from '../AppContato';
 
 
-export default function Cadastro() {
-    const [Nome, setNome] = useState(null)
-    const [Telefone, setTelefone] = useState(null)
-    const [Email, setEmail] = useState(null)
-    const [Rua, setRua] = useState(null)
-    const [Numero, setNumero] = useState(null)
-    const [Bairro, setBairro] = useState(null)
-    const [Cidade, setCidade] = useState(null)
-    const [Data_aniversario, setData_aniversario] = useState(null)
+export default function Pessoa() {
+    const [contatos, setContatos] = useState([]);
 
     function nomeChanged(Nome) {
         setNome(Nome);
@@ -41,32 +35,23 @@ export default function Cadastro() {
         setData_aniversario(Data_aniversario);
     }
 
-    async function botaoPressed() {
-        const contato = {
-            id: new Date().getTime(), Nome, Telefone, Email,
-            Rua, Numero, Bairro, Cidade, Data_aniversario
-        };
-        let contatos = [];
-        const response = await AsyncStorage.getItem('contatos');
+    // async function botaoPressed() {
+    //     const contato = {
+    //         id: new Date().getTime(), Nome, Telefone, Email,
+    //         Rua, Numero, Bairro, Cidade, Data_aniversario
+    //     };
+    //     let contatos = [];
+    //     const response = await AsyncStorage.getItem('contatos');
 
-        if (response) contatos = JSON.parse(response);
+    //     if (response) contatos = JSON.parse(response);
 
-        contatos.push(contato);
+    //     contatos.push(contato);
 
-        console.log(contatos);
+    //     console.log(contatos);
 
-        await AsyncStorage.setItem('contatos', JSON.stringify(contatos));
+    //     await AsyncStorage.setItem('contatos', JSON.stringify(contatos));
 
-    }
-
-    //Nome
-    //Telefone
-    //Email
-    //Rua
-    //Numero
-    //Bairro
-    //Cidade
-    //Data aniversario
+    // }
 
     return (
         <View style={styles.conteiner}>
@@ -77,8 +62,8 @@ export default function Cadastro() {
                     </Text>
                     <TextInput
                         style={styles.input}
-                        placeholder="Nome e sobrenome"
-                        onChangeText={nomeChanged}
+                    // placeholder="Nome e sobrenome"
+                    // onChangeText={nomeChanged}
                     />
                     <Text style={styles.titulo}>
                         Telefone
@@ -137,13 +122,13 @@ export default function Cadastro() {
                         placeholder="01/01/2000"
                         onChangeText={data_aniversarioChanged}
                     />
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={styles.button}
                         onPress={botaoPressed}
                     >
                         <Text style={styles.buttonText}
-                        >Salvar</Text>
-                    </TouchableOpacity>
+                        >Editar</Text>
+                    </TouchableOpacity> */}
                 </View>
             </ScrollView>
         </View>

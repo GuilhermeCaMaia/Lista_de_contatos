@@ -3,32 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function AppContato(props) {
-    // function Deletar() {
-    //     // envie a solicitação de exclusão para o servidor
-    //     fetch('/users/' + userId, {
-    //         method: 'DELETE'
-    //     })
-    //         .then(response => {
-    //             // verifique se a exclusão foi bem-sucedida
-    //             if (response.ok) {
-    //                 // atualize a interface do usuário para refletir a exclusão
-    //                 alert('Usuário excluído com sucesso!');
-    //             } else {
-    //                 // caso contrário, exiba uma mensagem de erro
-    //                 alert('Houve um problema ao excluir o usuário.');
-    //             }
-    //         })
-    //         .catch(error => {
-    //             // em caso de erro, exiba uma mensagem de erro
-    //             alert(error.message);
-    //         });
-    // }
-
-
     return (
-        <View>
-            <Text>{props.contato}</Text>
-            <View>
+        <View style={styles.contato}>
+            <Text style={styles.text}>{props.contato}</Text>
+            {/* <View>
                 <TouchableOpacity
                 // onPress={Deletar}
                 >
@@ -37,11 +15,27 @@ export default function AppContato(props) {
                 <TouchableOpacity>
                     <Text>Editar</Text>
                 </TouchableOpacity>
-            </View>
+            </View> */}
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-
+    contato: {
+        marginTop: 10,
+        height: 60,
+        backgroundColor: '#2F6642',
+        borderRadius: 10,
+        paddingHorizontal: '25%',
+        fontSize: 16,
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 20,
+        shadowOpacity: 20,
+        shadowColor: "#051a10"
+    },
+    text: {
+        color: "#FFF",
+        fontWeight: 'bold'
+    }
 })
