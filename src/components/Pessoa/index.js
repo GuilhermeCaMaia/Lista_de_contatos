@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { TouchableOpacity } from "react-native";
@@ -7,8 +7,10 @@ import { ScrollView } from 'react-native';
 import AppContato from '../AppContato';
 
 
-export default function Pessoa() {
-    const [contatos, setContatos] = useState([]);
+export default function Pessoa(contato) {
+    const [contatoPessoa, setContatoPessoa] = useState([]);
+
+    // console.log(contato.route.params.contato)
 
     function nomeChanged(Nome) {
         setNome(Nome);
@@ -53,6 +55,8 @@ export default function Pessoa() {
 
     // }
 
+    useEffect(() => { setContatoPessoa(contato.route.params.contato) }), [contato.route.params.contato]
+    console.log(contatoPessoa)
     return (
         <View style={styles.conteiner}>
             <ScrollView>
@@ -62,6 +66,7 @@ export default function Pessoa() {
                     </Text>
                     <TextInput
                         style={styles.input}
+                        value={contatoPessoa.Nome}
                     // placeholder="Nome e sobrenome"
                     // onChangeText={nomeChanged}
                     />
@@ -139,7 +144,6 @@ const styles = StyleSheet.create({
     conteiner: {
         flex: 1,
         backgroundColor: '#0E0D0D',
-        alignItems: 'baseline'
     },
     titulo: {
         color: '#FFFFFF',
@@ -162,7 +166,7 @@ const styles = StyleSheet.create({
         height: 60,
         backgroundColor: '#e1ded9',
         borderRadius: 10,
-        paddingHorizontal: "50%",
+        paddingHorizontal: 16,
         fontSize: 16,
         alignItems: 'center',
         justifyContent: 'center',

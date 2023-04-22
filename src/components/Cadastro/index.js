@@ -4,6 +4,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { TouchableOpacity } from "react-native";
 import { ScrollView } from 'react-native';
+import AppCamera from '../AppCamera';
 
 
 export default function Cadastro() {
@@ -70,8 +71,8 @@ export default function Cadastro() {
 
     return (
         <View style={styles.conteiner}>
-            <ScrollView>
-                <View>
+            <ScrollView >
+                <View >
                     <Text style={styles.titulo}>
                         Nome e sobrenome
                     </Text>
@@ -137,6 +138,9 @@ export default function Cadastro() {
                         placeholder="01/01/2000"
                         onChangeText={data_aniversarioChanged}
                     />
+                    <View style={{ margin: 55 }}>
+                    </View>
+                    <AppCamera />
                     <TouchableOpacity
                         style={styles.button}
                         onPress={botaoPressed}
@@ -154,7 +158,7 @@ const styles = StyleSheet.create({
     conteiner: {
         flex: 1,
         backgroundColor: '#0E0D0D',
-        alignItems: 'baseline'
+        // alignItems: 'baseline',
     },
     titulo: {
         color: '#FFFFFF',
@@ -177,7 +181,7 @@ const styles = StyleSheet.create({
         height: 60,
         backgroundColor: '#e1ded9',
         borderRadius: 10,
-        paddingHorizontal: "50%",
+        paddingHorizontal: 16,
         fontSize: 16,
         alignItems: 'center',
         justifyContent: 'center',

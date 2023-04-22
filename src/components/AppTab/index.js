@@ -1,6 +1,10 @@
 import React from 'react'
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
+import { AntDesign } from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 import Cadastro from "../Cadastro";
 import Lista from '../Lista';
@@ -32,13 +36,44 @@ export default function AppTab() {
                         right: 0
                     },
                     //onde cloca o incone
-                    tabBarIconStyle: { display: "none" }
+                    // tabBarIconStyle: { display: "none" }
                 }}
             >
-                <Screen name="Cadastro" component={Cadastro} />
-                <Screen name="Lista" component={Lista} />
-                <Screen name="Contato" component={Pessoa} />
+                <Screen
+                    name="Cadastro"
+                    component={Cadastro}
+                    options={{
+                        tabBarShowLabel: false,
+                        tabBarIcon: ({ color, size }) => (
+                            <AntDesign name="adduser" size={24} color="black" />
+                        )
+                    }}
+                />
+                <Screen
+                    name="Lista"
+                    component={Lista}
+                    options={{
+                        tabBarShowLabel: false,
+                        tabBarIcon: ({ color, size }) => (
+                            <Feather name="list" size={24} color="black" />
+                        )
+                    }}
+                />
+                <Screen
+                    name="Contato"
+                    component={Pessoa}
+                    initialParams={{ contato: [] }}
+                    options={{
+                        tabBarShowLabel: false,
+                        tabBarIcon: ({ color, size }) => (
+                            <AntDesign name="user" size={24} color="black" />
+                        )
+                    }}
+                />
             </Navigator>
         </NavigationContainer>
     );
 }
+const styles = StyleSheet.create({
+
+})
