@@ -76,7 +76,8 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         keyboardType="numeric"
-                        onChangeText={telefoneChanged}
+                        value={contatoPessoa.Telefone}
+                    // onChangeText={telefoneChanged}
                     />
                     <Text style={styles.titulo}>
                         Email
@@ -84,7 +85,8 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         placeholder="fulano@gmail.com"
-                        onChangeText={emailChanged}
+                        value={contatoPessoa.Email}
+                    // onChangeText={emailChanged}
                     />
                     <Text style={styles.titulo}>
                         Endereço:
@@ -95,7 +97,8 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         placeholder="Rua tal"
-                        onChangeText={ruaChanged}
+                        value={contatoPessoa.Rua}
+                    // onChangeText={ruaChanged}
                     />
                     <Text style={styles.titulo}>
                         Numero
@@ -103,29 +106,33 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         keyboardType="numeric"
-                        onChangeText={numeroChanged}
+                        value={contatoPessoa.Numero}
+                    // onChangeText={numeroChanged}
                     />
                     <Text style={styles.titulo}>
                         Bairro
                     </Text>
                     <TextInput
                         style={styles.input}
-                        onChangeText={bairroChanged}
+                        value={contatoPessoa.Bairro}
+                    // onChangeText={bairroChanged}
                     />
                     <Text style={styles.titulo}>
                         Cidade
                     </Text>
                     <TextInput
                         style={styles.input}
-                        onChangeText={cidadeChanged}
+                        value={contatoPessoa.Cidade}
+                    // onChangeText={cidadeChanged}
                     />
                     <Text style={styles.titulo}>
                         Data Nascimento
                     </Text>
                     <TextInput
                         style={styles.input}
-                        placeholder="01/01/2000"
-                        onChangeText={data_aniversarioChanged}
+                        value={contatoPessoa.Data_aniversario}
+                    // placeholder="01/01/2000"
+                    // onChangeText={data_aniversarioChanged}
                     />
                     {/* <TouchableOpacity
                         style={styles.button}
