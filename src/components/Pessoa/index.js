@@ -37,6 +37,7 @@ export default function Pessoa(contato) {
         setData_aniversario(Data_aniversario);
     }
 
+    //Função de edição
     // async function botaoPressed() {
     //     const contato = {
     //         id: new Date().getTime(), Nome, Telefone, Email,
@@ -67,8 +68,6 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         value={contatoPessoa.Nome}
-                    // placeholder="Nome e sobrenome"
-                    // onChangeText={nomeChanged}
                     />
                     <Text style={styles.titulo}>
                         Telefone
@@ -77,7 +76,6 @@ export default function Pessoa(contato) {
                         style={styles.input}
                         keyboardType="numeric"
                         value={contatoPessoa.Telefone}
-                    // onChangeText={telefoneChanged}
                     />
                     <Text style={styles.titulo}>
                         Email
@@ -86,7 +84,6 @@ export default function Pessoa(contato) {
                         style={styles.input}
                         placeholder="fulano@gmail.com"
                         value={contatoPessoa.Email}
-                    // onChangeText={emailChanged}
                     />
                     <Text style={styles.titulo}>
                         Endereço:
@@ -98,7 +95,6 @@ export default function Pessoa(contato) {
                         style={styles.input}
                         placeholder="Rua tal"
                         value={contatoPessoa.Rua}
-                    // onChangeText={ruaChanged}
                     />
                     <Text style={styles.titulo}>
                         Numero
@@ -107,7 +103,6 @@ export default function Pessoa(contato) {
                         style={styles.input}
                         keyboardType="numeric"
                         value={contatoPessoa.Numero}
-                    // onChangeText={numeroChanged}
                     />
                     <Text style={styles.titulo}>
                         Bairro
@@ -115,7 +110,6 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         value={contatoPessoa.Bairro}
-                    // onChangeText={bairroChanged}
                     />
                     <Text style={styles.titulo}>
                         Cidade
@@ -123,7 +117,6 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         value={contatoPessoa.Cidade}
-                    // onChangeText={cidadeChanged}
                     />
                     <Text style={styles.titulo}>
                         Data Nascimento
@@ -131,8 +124,6 @@ export default function Pessoa(contato) {
                     <TextInput
                         style={styles.input}
                         value={contatoPessoa.Data_aniversario}
-                    // placeholder="01/01/2000"
-                    // onChangeText={data_aniversarioChanged}
                     />
                     {/* <TouchableOpacity
                         style={styles.button}

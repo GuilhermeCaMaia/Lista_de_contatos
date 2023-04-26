@@ -9,6 +9,7 @@ import { Feather } from '@expo/vector-icons';
 import Cadastro from "../Cadastro";
 import Lista from '../Lista';
 import Pessoa from '../Pessoa';
+import AppContato from '../AppContato';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -35,8 +36,6 @@ export default function AppTab() {
                         left: 0,
                         right: 0
                     },
-                    //onde cloca o incone
-                    // tabBarIconStyle: { display: "none" }
                 }}
             >
                 <Screen

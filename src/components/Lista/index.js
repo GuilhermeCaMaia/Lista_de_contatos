@@ -29,10 +29,12 @@ export default function Lista() {
     }
 
     useEffect(() => {
-        getContatos().then(contatos => setContatos(contatos));
-    }, []);
+        const interval = setInterval(() => {
+            getContatos().then(contatos => setContatos(contatos));
+        }, 100);
 
-    // verContato()
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <View style={styles.conteiner}>

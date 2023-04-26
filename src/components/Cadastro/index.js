@@ -158,7 +158,6 @@ const styles = StyleSheet.create({
     conteiner: {
         flex: 1,
         backgroundColor: '#0E0D0D',
-        // alignItems: 'baseline',
     },
     titulo: {
         color: '#FFFFFF',
